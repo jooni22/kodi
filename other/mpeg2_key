@@ -1,0 +1,9 @@
+#
+#
+in /boot/start.elf and /boot/start_x.elf
+search for 47E933363248
+after this hex string:
+if you have 3C18 replace 18 with 1F
+if you have 1D18 replace 18 with 1F
+----:
+cp start_x.elf start_x.elf.bak; perl -pne 's/\x47\xE9362H\x3C\x18/\x47\xE9362H\x3C\x1F/g' < start_x.elf.bak > start_x.elf
